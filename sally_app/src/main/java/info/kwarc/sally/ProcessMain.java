@@ -1,8 +1,6 @@
 package info.kwarc.sally;
 
 import info.kwarc.sally.core.composition.SallyInteraction;
-import info.kwarc.sally.core.doc.DocumentInformation;
-import info.kwarc.sally.core.doc.DocumentManager;
 import info.kwarc.sally.core.net.IConnectionManager;
 import info.kwarc.sally.core.workflow.ISallyWorkflowManager;
 import info.kwarc.sally.injection.Configuration;
@@ -15,7 +13,11 @@ import info.kwarc.sally.service.def_lookup.DefinitionLookupService;
 import info.kwarc.sally.spreadsheet.ASMEditor;
 import info.kwarc.sissi.bpm.injection.ProductionLocalKnowledgeBase;
 import info.kwarc.sissi.bpm.injection.ProductionSallyActions;
+import sally.AlexClick;
 import sally.AlexData;
+import sally.RangeSelection;
+import sally.SallyFrame;
+import sally.ScreenCoordinates;
 import sally_comm.MessageUtils;
 
 import com.google.inject.Guice;
@@ -42,6 +44,7 @@ public class ProcessMain {
 		interaction.registerServices(i.getInstance(ASMEditor.class));		
 		interaction.registerServices(i.getInstance(DefinitionLookupService.class));		
 		interaction.registerServices(i.getInstance(PivotingService.class));		
+		interaction.registerServices(i.getInstance(DataValidation.class));		
 		
 		ISallyWorkflowManager kb = i.getInstance(ISallyWorkflowManager.class);
 		//kb.startProcess(null, "Sally.browse_ontology");
@@ -53,7 +56,7 @@ public class ProcessMain {
 		//ConnectionPlayer player = i.getInstance(IConnectionPlayerFactory.class).create(new FileReader("rec_spreadsheet.json"));
 		//player.start();
 
-		/*
+		
 		conn.newClient("spread", new MockNetworkSender());
 				
 		conn.newMessage("spread", MessageUtils.createDesktopSpreadsheetAlex());
@@ -69,8 +72,9 @@ public class ProcessMain {
 
 		SallyFrame frame =  SallyFrame.newBuilder().setFileName(fileName).build();
 		conn.newMessage("spread", frame);
-*/
 
+
+		/*
 		conn.newClient("spread", new MockNetworkSender());
 		
 		conn.newMessage("spread", MessageUtils.createDesktopSpreadsheetAlex());
@@ -83,7 +87,7 @@ public class ProcessMain {
 		
 		DocumentInformation docInfof = docMan.getDocumentInformation(fileName);
 		docInfof.getTheo().openWindow(docInfof, docInfof.getDocumentWorkflowID(), "Impact Analysis", "http://localhost/krane/impact.html", 500, 500);
-
+*/
 		/*
 		
 		conn.newClient("cad", new MockNetworkSender());
