@@ -21,11 +21,12 @@ $(function() {
 <form class="cbp-mc-form">
     <div class="cbp-mc-column">
     <label for="incident_description">Incident ID</label>
-        <input type="text" id="incident_id" name="incident_id" placeholder="ID">
+        <input type="text" id="incident_id" name="incident_id" placeholder="ID" value="${incident_id}">
     <label for="incident_description">Incident Description (Summary)</label>
-        <input type="text" id="incident_description" name="incident_description" placeholder="text">
+        <input type="text" id="incident_description" name="incident_description" placeholder="text" value="${incident_description}>
 	<label for="incident_resolution">Incident Resolution </label>
-        <input type="text" id="incident_resolution" name="incident_resolution" placeholder="text">
+        <textarea text = "incident_resolution"> ${incident_resolution}
+        </textarea>
 	 <label for="application">Application</label>
         <select id="application" name="application">
             <option>CI Business Service</option>
