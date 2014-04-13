@@ -20,18 +20,49 @@ $(function() {
 
 <form class="cbp-mc-form">
     <div class="cbp-mc-column">
-    <label for="incident_description">Incident ID</label>
+    
+    <label for="incident_id">Incident ID</label>
         <input type="text" id="incident_id" name="incident_id" placeholder="ID" value="${incident_id}">
+        
     <label for="incident_description">Incident Description (Summary)</label>
-        <input type="text" id="incident_description" name="incident_description" placeholder="text" value="${incident_description}>
+        <textarea text = "incident_description"> ${incident_description}
+        </textarea>
+        
 	<label for="incident_resolution">Incident Resolution </label>
         <textarea text = "incident_resolution"> ${incident_resolution}
         </textarea>
+        
+     <h4>Incident Details:</h4>   
+        
+     <label for="incident_businessapp">EADS_CI Business Service</label>
+        <input type="text" id="incident_businessapp" name="incident_businessapp" placeholder="businessapp" value="${incident_businessapp}">   
+     
+     <label for="incident_status">Status</label>
+        <input type="text" id="incident_status" name="incident_status" placeholder="status" value="${incident_status}">  
+     
+     <label for="incident_priority">Priority</label>
+        <input type="text" id="incident_priority" name="incident_priority" placeholder="priority" value="${incident_priority}">
+        
+     <label for="incident_region">Region</label>
+        <input type="text" id="incident_region" name="incident_region" placeholder="region" value="${incident_region}">
+        
+     <label for="incident_servtarget">Service Target</label>
+        <input type="text" id="incident_servtarget" name="incident_servtarget" placeholder="servtarget" value="${incident_servtarget}">
+     
+     <label for="incident_progress">Progress</label>
+        <input type="text" id="incident_progress" name="incident_progress" placeholder="progress" value="${incident_progress}">
+                 
+     <label for="incident_opcateg">Operational Categorization Tier</label>
+        <input type="text" id="incident_opcateg" name="incident_opcateg" placeholder="opcateg" value="${incident_opcateg}">
+        
+     <label for="incident_agroup">Assigned Group</label>
+        <input type="text" id="incident_agroup" name="incident_agroup" placeholder="agroup" value="${incident_agroup}">      
 	 <label for="application">Application</label>
-        <select id="application" name="application">
-            <option>CI Business Service</option>
-            <option>CI+</option>
-        </select>   
+
+	<label for="incident_notes">Incident Notes</label>
+        <textarea text = "incident_notes"> ${incident_notes}
+        </textarea>
+	 
      <label for="tag">Tags</label>
         <select id="tag" name="tag">
             <option>Status</option>
