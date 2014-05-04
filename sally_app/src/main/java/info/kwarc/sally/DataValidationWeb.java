@@ -9,7 +9,9 @@ import info.kwarc.sally.spreadsheet.SpreadsheetDocument;
 
 import java.util.HashMap;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
@@ -51,11 +53,17 @@ public class DataValidationWeb {
 		data.put("incident_servtarget", sheetData.getCells().get(3).get(12).getFormula());
 		data.put("incident_progress", sheetData.getCells().get(3).get(13).getFormula());
 		data.put("incident_opcateg", sheetData.getCells().get(3).get(14).getFormula());
-		data.put("incident_agroup", sheetData.getCells().get(3).get(17).getFormula());
+		data.put("incident_agroup", sheetData.getCells().get(3).get(16).getFormula());
 		data.put("incident_notes", sheetData.getCells().get(3).get(8).getFormula());
 		
 		
-		
 		return te.generateTemplate("validate/validate.ftl", data);
+		//return te.generateTemplate("validate/postInfo.ftl", data);
+		
+	}
+	
+	@POST
+	public String post(@FormParam("incident_id") String incident_id){
+		return incident_id;
 	}
 }

@@ -16,11 +16,9 @@ $(function() {
 });
 </script>
 
-<form>
-
-<form class="cbp-mc-form">
-    <div class="cbp-mc-column">
+<form class="cbp-mc-form" method="POST">
     
+    <div class="cbp-mc-column">
     <label for="incident_id">Incident ID</label>
         <input type="text" id="incident_id" name="incident_id" placeholder="ID" value="${incident_id}">
         
@@ -57,21 +55,11 @@ $(function() {
         
      <label for="incident_agroup">Assigned Group</label>
         <input type="text" id="incident_agroup" name="incident_agroup" placeholder="agroup" value="${incident_agroup}">      
-	 <label for="application">Application</label>
 
 	<label for="incident_notes">Incident Notes</label>
-        <textarea text = "incident_notes"> ${incident_notes}
-        </textarea>
-	 
-     <label for="tag">Tags</label>
-        <select id="tag" name="tag">
-            <option>Status</option>
-            <option>Priority</option>
-            <option>Region</option>
-            <option>Service Target</option>
-            <option>Progress</option>
-        </select>
+        <textarea text = "incident_notes"> ${incident_notes}</textarea>
     </div>
+    
     <div class="cbp-mc-column">
         <label>Append to Existing Incident</label>
         <input type="text" id="incident_description" name="incident_description" placeholder="text">
@@ -80,5 +68,7 @@ $(function() {
     <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Save as Draft" />
     <input class="cbp-mc-submit" type="submit" value="Wait for further Approval" />
     <input class="cbp-mc-submit" type="submit" value="Post to SMARTER KM iShare" />
+    <input class="cbp-mc-submit" type="submit" value="Save as XML file" />
     </div>  
+    </div>
 </form>

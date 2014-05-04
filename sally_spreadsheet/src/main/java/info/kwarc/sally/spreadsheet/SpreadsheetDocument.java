@@ -75,7 +75,7 @@ public class SpreadsheetDocument {
 		
 		ObjectMapper mapper = new ObjectMapper(); // create once, reuse
 		try {
-			JSONSnapshot snap  = JSONSnapshot.retrieveSnapshot(documentManager, shareJSCollection, filePath);
+			JSONSnapshot snap  = JSONSnapshot.retrieveSnapshot(documentManager, shareJSCollection, "file:////home/costea/Downloads/AirbusReport.xls");
 			if (snap.getSnapshot() != null)
 				shareJSModel= mapper.readValue(snap.getSnapshot(), SpreadsheetModel.class);
 		} catch (JsonParseException e) {
